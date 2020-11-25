@@ -2,7 +2,7 @@
 Steps to setup and run the project
 
 1. Download all the files from the given URL
-2. Open it in visual studio (I used Visual studio 2019 version)
+2. Open it in visual studio by doubleclicking ShopBridge.sln file(I used Visual studio 2019 version)
 3. Before that create database and table with following code
 
 CREATE DATABASE assessment1DB;(Execute this first)
