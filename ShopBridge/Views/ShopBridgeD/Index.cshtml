@@ -1,0 +1,71 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Shop Bridge";
+
+}
+<center>
+    <h1>Shop Bridge</h1>                    <!--Titles-->
+    <hr />
+    <label> Components Table</label>
+    <hr />
+    <a name="AddProducts" href="" onclick="popup('@Url.Action("Create","ShopBridgeD")');">Add new products</a>
+    <hr />
+</center>
+
+<!--Index Page where your starting page Launch-->
+<center>
+    <div id="refreshWithoutFullpage">
+
+        <table class="table table-bordered table-striped">
+            <!--Table with 5 columns-->
+            <tr>
+                <th></th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Description</th>
+                <th></th>
+            </tr>
+            @for (int i = 0; i < Model.Rows.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <!--Product Details-->  <!--Popup for asynchronous operations without loading full page-->
+                        <a name="details" href="" id="details" onclick="popup('@Url.Action("Details","ShopBridgeD", new {@id=Model.Rows[i][0] })');">Details</a>
+                        <script>
+                            function popup(url) {
+                                window.open(url, "#1", "dialogHeight:600px;dialogHeight:400px;dialogWidth:700px;dialogTop:300px;dialogLeft:400px;edge:Raised;center:Yes;help:No;Resiable:No;Status:No;");
+                            }
+                        </script>
+                    </td>
+                    <td>@Model.Rows[i][1]</td>
+                    <td>@Model.Rows[i][2]</td>
+                    <td>@Model.Rows[i][3]</td>
+                    <td>
+                        <!--Delete Data from table-->
+                        <a href="@Url.Action("Delete","ShopBridgeD", new {@id=Model.Rows[i][0] })" name="delete">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+    <!--Java Script for Refreshing Div without full page load-->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                $("#refreshWithoutFullpage").load("Index");
+                refresh();
+            }, 5000);
+        }
+        );
+    </script>
+
+
+
+</center>
+
+
+
+

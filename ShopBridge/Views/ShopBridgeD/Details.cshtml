@@ -1,0 +1,52 @@
+﻿@model ShopBridge.Models.Shopbridgedata1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!--Product Details displayer-->
+<center>
+
+    <h2>Product Details</h2>
+
+    <div>
+
+        <hr />
+        <dl class="center-block">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.product_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.product_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.product_name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.product_name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.product_price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.product_price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.product_description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.product_description)
+            </dd>
+
+        </dl>
+    </div>
+
+</center>
