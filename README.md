@@ -4,13 +4,16 @@ Steps to setup and run the project
 1. Download all the files from the given URL
 2. Open it in visual studio (I used Visual studio 2019 version)
 3. Before that create database and table with following code
+
 CREATE DATABASE assessment1DB;(Execute this first)
+
 CREATE TABLE ComponentsTable (
     product_id int NOT NULL PRIMARY KEY,
     product_name varchar(40) NOT NULL,
     product_price varchar(40) NOT NULL,
     product_description varchar(255) NOT NULL
 );
+
 4. once its done connect your visual studio and database with following steps 
 visual studio 2019(Tools--> Connect to database--> In Add connection window--> select Microsoft SQL Server(SqlClient)-->
 Server Name(Give your local server name in which you have created your DB and Table)-->
